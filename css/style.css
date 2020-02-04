@@ -6,3 +6,32 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+/* init */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;                     /* specify for a box */
+}
+
+body {
+    font-family: "Lato", sans-serif;            /* sans-serif: 沒有襯線的字體 */
+    font-weight: 400;                           /* 字體粗细程度 */
+    font-size: 16px;
+    line-height: 1.7;                           /* 1.7 times of predefined line height */
+    color: #777;                                /* grey color */
+    padding: 30px;
+}
+
+.header {
+    height: 95vh;                               /*  95% the viewport height (vh) of box */
+    background-image: linear-gradient(          /* 從鮮綠色一直往右下漸變到深綠色 */
+        to right bottom,
+        rgba(126,213,111,0.8),                  /* rgba: red, green, blue, opacity value (不透明度值) */
+        rgba(40, 180, 131, 0.8)),
+    url(../img/hero.jpg);                       /* .. refer to go into the project folder. */
+    background-size: cover;                     /* fit the element inside of the box, and regardless viewport width */
+    background-position: top;                   /* make sure stays at the top of the container */
+    clip-path: polygon(0 0 , 100% 0, 100% 200px, 0 100%)        /* polygon(x y, x y, x y), we don't wanna remove the index of x, y axis  */
+}
+
