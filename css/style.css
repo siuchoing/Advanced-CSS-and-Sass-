@@ -32,6 +32,26 @@ body {
     url(../img/hero.jpg);                       /* .. refer to go into the project folder. */
     background-size: cover;                     /* fit the element inside of the box, and regardless viewport width */
     background-position: top;                   /* make sure stays at the top of the container */
-    clip-path: polygon(0 0 , 100% 0, 100% 200px, 0 100%)        /* polygon(x y, x y, x y), we don't wanna remove the index of x, y axis  */
+    position: relative;
+
+    clip-path: polygon(0 0 , 100% 0, 100% 75vh, 0 100%);        /* polygon(x y, x y, x y), we don't wanna remove the index of x, y axis  */
 }
 
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase; /* 強制所有字符被轉換為大寫  */
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;       /* 左右字距 */
+}
