@@ -37,6 +37,24 @@ body {
     clip-path: polygon(0 0 , 100% 0, 100% 75vh, 0 100%);        /* polygon(x y, x y, x y), we don't wanna remove the index of x, y axis  */
 }
 
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;           /* width will automatically figured out by the browser. */
+}
+
+/* Move box to Center position */
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);   /* firstly, 50% of element's height to the left, and to the top */
+}
+
 .heading-primary {
     color: #fff;
     text-transform: uppercase; /* 強制所有字符被轉換為大寫  */
