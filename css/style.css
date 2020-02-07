@@ -44,7 +44,7 @@ body {
 }
 
 .logo {
-    height: 35px;           /* width will automatically figured out by the browser. */
+    height: 35px;                       /* width will automatically figured out by the browser. */
 }
 
 /* Move box to Center position */
@@ -57,7 +57,7 @@ body {
 
 .heading-primary {
     color: #fff;
-    text-transform: uppercase; /* 強制所有字符被轉換為大寫  */
+    text-transform: uppercase;          /* 強制所有字符被轉換為大寫  */
 }
 
 .heading-primary-main {
@@ -71,5 +71,6 @@ body {
     display: block;
     font-size: 20px;
     font-weight: 700;
-    letter-spacing: 17.4px;       /* 左右字距 */
+    letter-spacing: 17.4px;             /* 左右字距 */
+}
 }
