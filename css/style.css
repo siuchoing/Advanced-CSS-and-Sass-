@@ -47,6 +47,11 @@ body {
     height: 35px;                       /* width will automatically figured out by the browser. */
 }
 
+
+.logo-box:hover > .logo {               /* 當鼠標懸停在圖片上時全圖預覽的畫廊功能 */
+    animation: moveInRight 1s ease-out;
+}
+
 /* Move box to Center position */
 .text-box {
     position: absolute;
