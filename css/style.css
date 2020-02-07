@@ -58,6 +58,8 @@ body {
 .heading-primary {
     color: #fff;
     text-transform: uppercase;          /* 強制所有字符被轉換為大寫  */
+
+    backface-visibility: hidden;        /* Fix animation a bit shaky by [隱藏元素在3D 空間中旋轉時的背面] */
 }
 
 .heading-primary-main {
