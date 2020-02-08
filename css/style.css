@@ -14,13 +14,17 @@ Dark green: #28b485
     box-sizing: border-box;                         /* specify for a box */
 }
 
+html {
+    font-size: 10px;                                /* set parent font size as 1rem = 10px */
+}
+
 body {
     font-family: "Lato", sans-serif;                /* sans-serif: 沒有襯線的字體 */
     font-weight: 400;                               /* 字體粗细程度 */
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 1.7;                               /* 1.7 times of predefined line height */
     color: #777;                                    /* grey color */
-    padding: 30px;
+    padding: 3rem;
 }
 
 .header {
@@ -39,12 +43,12 @@ body {
 
 .logo-box {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
 .logo {
-    height: 35px;                                   /* width will automatically figured out by the browser. */
+    height: 3.5rem;                                   /* width will automatically figured out by the browser. */
 }
 
 
@@ -66,14 +70,14 @@ body {
     text-transform: uppercase;                      /* 強制所有字符被轉換為大寫  */
 
     backface-visibility: hidden;                    /* Fix animation a bit shaky by [隱藏元素在3D 空間中旋轉時的背面] */
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 }
 
 .heading-primary-main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
 
     animation-name: moveInLeft;
     animation-duration: 1s;
@@ -86,9 +90,9 @@ body {
 
 .heading-primary-sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17.4px;                         /* 左右字距 */
+    letter-spacing: 1.74rem;                         /* 左右字距 */
 
     animation: moveInRight 1s ease-out;
 }
@@ -96,11 +100,11 @@ body {
 @keyframes moveInLeft {
     0% {
         opacity: 0;                                 /* 不透明度: 完全透明 */
-        transform: translateX(-100px);              /* Move to Right 100px */
+        transform: translateX(-10rem);              /* Move to Right 10rem */
 
     }
     80% {
-        transform: translateX(10px);                /* Right Move To Left */
+        transform: translateX(1rem);                /* Right Move To Left */
     }
     100% {
         opacity: 1;                                 /* 不透明度: 完全不透明 */
@@ -111,10 +115,10 @@ body {
 @keyframes moveInRight {
     0% {
         opacity: 0;                                 /* 不透明度: 完全透明 */
-        transform: translateX(100px);               /* Move to Left 100px */
+        transform: translateX(10rem);               /* Move to Left 10rem */
     }
     80% {
-        transform: translateX(-10px);               /* Move To Right 10px*/
+        transform: translateX(-1rem);               /* Move To Right 1rem*/
     }
     100% {
         opacity: 1;                                 /* 不透明度: 完全不透明 */
@@ -126,7 +130,7 @@ body {
 @keyframes moveInBottom {
     0% {
         opacity: 0;                                 /* 不透明度: 完全透明  */
-        transform: translateY(30px);                /* Move to Left 100px */
+        transform: translateY(3rem);                /* Move to Left 10rem */
     }
     100% {
         opacity: 1;                                 /* 不透明度: 完全不透明  */
@@ -139,22 +143,22 @@ body {
 .btn:visited {                                      /* visited state, is a state before click and stay the element  */
     text-transform: uppercase;                      /* 強制所有字符被轉換為大寫 */
     text-decoration: none;                          /* 移除底線 */
-    padding: 15px 40px;                             /* 15px for top bottom; 40px for left right */
+    padding: 1.5rem 4rem;                             /* 1.5rem for top bottom; 4rem for left right */
     display: inline-block;                          /* should be doing if provide padding or height or width of element */
-    border-radius: 100px;                           /* 圓角效果 */
+    border-radius: 10rem;                           /* 圓角效果 */
     transition: all .2s;                            /* all the properties are enabled to be animated. */
     position: relative;
 }
 
 .btn:hover {
-    transform: translateY(-3px);                    /* when move to the element, it will move up the element */
-    box-shadow: 0 10px 20px rgba(0,0,0,.2);         /* x偏移量 | y偏移量(down 10px) | 陰影模糊半徑 | 陰影顏色 */
+    transform: translateY(-.3rem);                    /* when move to the element, it will move up the element */
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);         /* x偏移量 | y偏移量(down 1rem) | 陰影模糊半徑 | 陰影顏色 */
 }
 
 /* related to .btn:link */
 .btn:active {
-    transform: translateY(-1px);                    /* -1px is related to the initial state, it is to the link state */
-    box-shadow: 0 5px 10px rgba(0,0,0,.2);          /* !! smaller the shadow while button is closer !! */
+    transform: translateY(-.1rem);                    /* -.1rem is related to the initial state, it is to the link state */
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);          /* !! smaller the shadow while button is closer !! */
 }
 
 .btn-white {
@@ -168,7 +172,7 @@ body {
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position: absolute;
     top: 0;
     left: 0;
