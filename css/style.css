@@ -11,30 +11,30 @@ Dark green: #28b485
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;                     /* specify for a box */
+    box-sizing: border-box;                         /* specify for a box */
 }
 
 body {
-    font-family: "Lato", sans-serif;            /* sans-serif: 沒有襯線的字體 */
-    font-weight: 400;                           /* 字體粗细程度 */
+    font-family: "Lato", sans-serif;                /* sans-serif: 沒有襯線的字體 */
+    font-weight: 400;                               /* 字體粗细程度 */
     font-size: 16px;
-    line-height: 1.7;                           /* 1.7 times of predefined line height */
-    color: #777;                                /* grey color */
+    line-height: 1.7;                               /* 1.7 times of predefined line height */
+    color: #777;                                    /* grey color */
     padding: 30px;
 }
 
 .header {
-    height: 95vh;                               /*  95% the viewport height (vh) of box */
-    background-image: linear-gradient(          /* 從鮮綠色一直往右下漸變到深綠色 */
+    height: 95vh;                                   /*  95% the viewport height (vh) of box */
+    background-image: linear-gradient(              /* 從鮮綠色一直往右下漸變到深綠色 */
         to right bottom,
-        rgba(126,213,111,0.8),                  /* rgba: red, green, blue, opacity value (不透明度值) */
+        rgba(126,213,111,0.8),                      /* rgba: red, green, blue, opacity value (不透明度值) */
         rgba(40, 180, 131, 0.8)),
-    url(../img/hero.jpg);                       /* .. refer to go into the project folder. */
-    background-size: cover;                     /* fit the element inside of the box, and regardless viewport width */
-    background-position: top;                   /* make sure stays at the top of the container */
+    url(../img/hero.jpg);                           /* .. refer to go into the project folder. */
+    background-size: cover;                         /* fit element inside the box, and regardless viewport width */
+    background-position: top;                       /* make sure stays at the top of the container */
     position: relative;
 
-    clip-path: polygon(0 0 , 100% 0, 100% 75vh, 0 100%);        /* polygon(x y, x y, x y), we don't wanna remove the index of x, y axis  */
+    clip-path: polygon(0 0 , 100% 0, 100% 75vh, 0 100%);        /* polygon(x y, x y, x y) */
 }
 
 .logo-box {
@@ -44,11 +44,11 @@ body {
 }
 
 .logo {
-    height: 35px;                       /* width will automatically figured out by the browser. */
+    height: 35px;                                   /* width will automatically figured out by the browser. */
 }
 
 
-.logo-box:hover > .logo {               /* 當鼠標懸停在圖片上時全圖預覽的畫廊功能 */
+.logo-box:hover > .logo {                           /* 當鼠標懸停在圖片上時全圖預覽的畫廊功能 */
     animation: moveInRight 1s ease-out;
 }
 
@@ -57,14 +57,14 @@ body {
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);   /* firstly, 50% of element's height to the left, and to the top */
+    transform: translate(-50%, -50%);               /* firstly, 50% of element's height to the left, and to the top */
 }
 
 .heading-primary {
     color: #fff;
-    text-transform: uppercase;          /* 強制所有字符被轉換為大寫  */
+    text-transform: uppercase;                      /* 強制所有字符被轉換為大寫  */
 
-    backface-visibility: hidden;        /* Fix animation a bit shaky by [隱藏元素在3D 空間中旋轉時的背面] */
+    backface-visibility: hidden;                    /* Fix animation a bit shaky by [隱藏元素在3D 空間中旋轉時的背面] */
 }
 
 .heading-primary-main {
@@ -75,10 +75,10 @@ body {
 
     animation-name: moveInLeft;
     animation-duration: 1s;
-    animation-timing-function: ease-out;     /* the animation will start slower and then accelerate over time. */
+    animation-timing-function: ease-out;            /* the animation will start slower and then accelerate over time. */
     /*
-    animation-delay: 3s;                !*after 3s, to start animation (optional)*!
-    animation-iteration-count: 3;       !*run animation 3 time*!
+    animation-delay: 3s;                            !*after 3s, to start animation (optional)*!
+    animation-iteration-count: 3;                   !*run animation 3 time*!
     */
 }
 
@@ -86,36 +86,36 @@ body {
     display: block;
     font-size: 20px;
     font-weight: 700;
-    letter-spacing: 17.4px;             /* 左右字距 */
+    letter-spacing: 17.4px;                         /* 左右字距 */
 
     animation: moveInRight 1s ease-out;
 }
 
 @keyframes moveInLeft {
     0% {
-        opacity: 0;                     /* 不透明度: 完全透明  */
-        transform: translateX(-100px);  /* Move to Right 100px */
+        opacity: 0;                                 /* 不透明度: 完全透明 */
+        transform: translateX(-100px);              /* Move to Right 100px */
 
     }
     80% {
-        transform: translateX(10px);    /* Right Move To Left */
+        transform: translateX(10px);                /* Right Move To Left */
     }
     100% {
-        opacity: 1;                     /* 不透明度: 完全不透明  */
-        transform: translate(0);        /* move to original */
+        opacity: 1;                                 /* 不透明度: 完全不透明 */
+        transform: translate(0);                    /* move to original */
     }
 }
 
 @keyframes moveInRight {
     0% {
-        opacity: 0;                     /* 不透明度: 完全透明  */
-        transform: translateX(100px);   /* Move to Left 100px */
+        opacity: 0;                                 /* 不透明度: 完全透明 */
+        transform: translateX(100px);               /* Move to Left 100px */
     }
     80% {
-        transform: translateX(-10px);   /* Move To Right 10px*/
+        transform: translateX(-10px);               /* Move To Right 10px*/
     }
     100% {
-        opacity: 1;                     /* 不透明度: 完全不透明  */
-        transform: translate(0);        /* move to original */
+        opacity: 1;                                 /* 不透明度: 完全不透明 */
+        transform: translate(0);                    /* move to original */
     }
 }
