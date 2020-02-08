@@ -58,6 +58,7 @@ body {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);               /* firstly, 50% of element's height to the left, and to the top */
+    text-align: center;                             /* 文字置中 */
 }
 
 .heading-primary {
@@ -65,6 +66,7 @@ body {
     text-transform: uppercase;                      /* 強制所有字符被轉換為大寫  */
 
     backface-visibility: hidden;                    /* Fix animation a bit shaky by [隱藏元素在3D 空間中旋轉時的背面] */
+    margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -118,4 +120,32 @@ body {
         opacity: 1;                                 /* 不透明度: 完全不透明 */
         transform: translate(0);                    /* move to original */
     }
+}
+
+/* pseudo-class */                                  /* You can use .btn to replace this pseudo-class */
+.btn:link,                                          /* link state, is a state of a selector */
+.btn:visited {                                      /* visited state, is a state before click and stay the element  */
+    text-transform: uppercase;                      /* 強制所有字符被轉換為大寫 */
+    text-decoration: none;                          /* 移除底線 */
+    padding: 15px 40px;                             /* 15px for top bottom; 40px for left right */
+    display: inline-block;                          /* should be doing if provide padding or height or width of element */
+    border-radius: 100px;                           /* 圓角效果 */
+    transition: all .2s;                            /* all the properties are enabled to be animated. */
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-3px);                    /* when move to the element, it will move up the element */
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);         /* x偏移量 | y偏移量(down 10px) | 陰影模糊半徑 | 陰影顏色 */
+}
+
+/* related to .btn:link */
+.btn:active {
+    transform: translateY(-1px);                    /* -1px is related to the initial state, it is to the link state */
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);          /* !! smaller the shadow while button is closer !! */
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
 }
