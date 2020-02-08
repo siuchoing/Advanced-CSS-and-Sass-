@@ -122,6 +122,18 @@ body {
     }
 }
 
+/* Bottom move to Top */
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;                                 /* 不透明度: 完全透明  */
+        transform: translateY(30px);                /* Move to Left 100px */
+    }
+    100% {
+        opacity: 1;                                 /* 不透明度: 完全不透明  */
+        transform: translateY(0);                   /* move to original */
+    }
+}
+
 /* pseudo-class */                                  /* You can use .btn to replace this pseudo-class */
 .btn:link,                                          /* link state, is a state of a selector */
 .btn:visited {                                      /* visited state, is a state before click and stay the element  */
@@ -172,4 +184,8 @@ body {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
 }
+
+.btn-animated {
+    animation: moveInBottom 0.5s ease-out .75;      /* [name, duration, timing function, delay] */
+    animation-fill-mode: backwards;                 /* Apply the styles up to 0% before the animation starts. */
 }
