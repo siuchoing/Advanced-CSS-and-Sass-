@@ -47,23 +47,23 @@ body {
     clip-path: polygon(0 0 , 100% 0, 100% 75vh, 0 100%);        /* polygon(x y, x y, x y) */
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute;
     top: 4rem;
     left: 4rem;
 }
 
-.logo {
+.header__logo {
     height: 3.5rem;                                   /* width will automatically figured out by the browser. */
 }
 
 
-.logo-box:hover > .logo {                           /* 當鼠標懸停在圖片上時全圖預覽的畫廊功能 */
+.header__logo-box:hover > .logo {                           /* 當鼠標懸停在圖片上時全圖預覽的畫廊功能 */
     animation: moveInRight 1s ease-out;
 }
 
 /* Move box to Center position */
-.text-box {
+.header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -79,7 +79,7 @@ body {
     margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
     display: block;
     font-size: 6rem;
     font-weight: 400;
@@ -94,7 +94,7 @@ body {
     */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
@@ -154,6 +154,7 @@ body {
     border-radius: 10rem;                           /* 圓角效果 */
     transition: all .2s;                            /* all the properties are enabled to be animated. */
     position: relative;
+    font-size: 1.6rem;
 }
 
 .btn:hover {
@@ -167,7 +168,7 @@ body {
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);          /* !! smaller the shadow while button is closer !! */
 }
 
-.btn-white {
+.btn--white {
     background-color: #fff;
     color: #777;
 }
@@ -186,7 +187,7 @@ body {
     transition: all .4s;                            /* shorthand transition */
 }
 
-.btn-white::after {
+.btn--white::after {
     background-color: #fff;
 }
 
@@ -195,7 +196,7 @@ body {
     opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
     animation: moveInBottom 0.5s ease-out .75;      /* [name, duration, timing function, delay] */
     animation-fill-mode: backwards;                 /* Apply the styles up to 0% before the animation starts. */
 }
