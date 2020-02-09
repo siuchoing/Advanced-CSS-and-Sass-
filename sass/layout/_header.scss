@@ -1,0 +1,35 @@
+.header {
+  height: 95vh;                                 /*  95% the viewport height (vh) of box */
+  background-image: linear-gradient(            /* 從鮮綠色一直往右下漸變到深綠色 */
+                  to right bottom,
+                  rgba($color-primary-light, 0.8),            /* rgba: red, green, blue, opacity value (不透明度值) */
+                  rgba($color-primary-dark, 0.8)),
+  url(../img/hero.jpg);                         /* .. refer to go into the project folder. */
+  background-size: cover;                       /* fit element inside the box, and regardless viewport width */
+  background-position: top;                     /* make sure stays at the top of the container */
+  position: relative;
+
+  clip-path: polygon(0 0 , 100% 0, 100% 75vh, 0 100%);      /* polygon(x y, x y, x y) */
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;                             /* width will automatically figured out by the browser. */
+  }
+
+  &__logo-box:hover > .logo {                   /* 當鼠標懸停在圖片上時全圖預覽的畫廊功能 */
+    animation: moveInRight 1s ease-out;
+  }
+
+  &__text-box {                                 /* Move box to Center position */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);           /* firstly, 50% of element's height to the left, and to the top */
+    text-align: center;                         /* 文字置中 */
+  }
+}

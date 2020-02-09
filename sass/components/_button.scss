@@ -1,0 +1,58 @@
+.btn {
+  /* pseudo-class */                            /* You can use .btn to replace this pseudo-class */
+  &:link,                                       /* link state, is a state of a selector */
+  &:visited {                                   /* visited state, is a state before click and stay the element  */
+    text-transform: uppercase;                  /* 強制所有字符被轉換為大寫 */
+    text-decoration: none;                      /* 移除底線 */
+    padding: 1.5rem 4rem;                       /* 1.5rem for top bottom; 4rem for left right */
+    display: inline-block;                      /* should be doing if provide padding or height or width of element */
+    border-radius: 10rem;                       /* 圓角效果 */
+    transition: all .2s;                        /* all the properties are enabled to be animated. */
+    position: relative;
+    font-size: 1.6rem;
+  }
+
+  &:hover {
+    transform: translateY(-.3rem);                  /* when move to the element, it will move up the element */
+    box-shadow: 0 1rem 2rem rgba($color-black,.2);  /* x偏移量 | y偏移量(down 1rem) | 陰影模糊半徑 | 陰影顏色 */
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  /* related to &:link */
+  &:active {
+    transform: translateY(-.1rem);                  /* -.1rem is related to the initial state, it is to the link state */
+    box-shadow: 0 .5rem 1rem rgba($color-black,.2); /* !! smaller the shadow while button is closer !! */
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  /* run css after pseudo element finished*/
+  &::after {
+    content: "";                                    /* insert content */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;                                    /* -1 是 最低層位置 */
+    transition: all .4s;                            /* shorthand transition */
+  }
+
+  &--animated {
+    animation: moveInBottom 0.5s ease-out .75;      /* [name, duration, timing function, delay] */
+    animation-fill-mode: backwards;                 /* Apply the styles up to 0% before the animation starts. */
+  }
+}

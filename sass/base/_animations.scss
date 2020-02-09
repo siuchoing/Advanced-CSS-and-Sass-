@@ -1,0 +1,40 @@
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;                                 /* 不透明度: 完全透明 */
+    transform: translateX(-10rem);              /* Move to Right 10rem */
+
+  }
+  80% {
+    transform: translateX(1rem);                /* Right Move To Left */
+  }
+  100% {
+    opacity: 1;                                 /* 不透明度: 完全不透明 */
+    transform: translate(0);                    /* move to original */
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;                                 /* 不透明度: 完全透明 */
+    transform: translateX(10rem);               /* Move to Left 10rem */
+  }
+  80% {
+    transform: translateX(-1rem);               /* Move To Right 1rem*/
+  }
+  100% {
+    opacity: 1;                                 /* 不透明度: 完全不透明 */
+    transform: translate(0);                    /* move to original */
+  }
+}
+
+/* Bottom move to Top */
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;                                 /* 不透明度: 完全透明  */
+    transform: translateY(3rem);                /* Move to Left 10rem */
+  }
+  100% {
+    opacity: 1;                                 /* 不透明度: 完全不透明  */
+    transform: translateY(0);                   /* move to original */
+  }
+}
