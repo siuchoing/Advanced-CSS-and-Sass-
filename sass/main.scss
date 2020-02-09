@@ -1,15 +1,8 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
-
 $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
-$color-primary-dark;
+$color-primary-dark: #28b485;
+$color-grey-dark: #777;
+$color-white: #fff;
 
 /* init */
 *,
@@ -18,12 +11,12 @@ $color-primary-dark;
   margin: 0;
   padding: 0;
   box-sizing: inherit;                            /* By setting the box-sizing property on each element
-                                                       on the entire page to inherit */
+                                                     on the entire page to inherit */
 }
 
-html {                                              /* For Mobile, and Web */
+html {                                            /* For Mobile, and Web */
   font-size: 62.5%;                               /* set parent font size as 1rem = 10px, 100%/16px*10px = 62.5% */
-  /* But, rems are not supported below Internet Explorer 9, */
+                                                  /* But, rems are not supported below Internet Explorer 9, */
 }
 
 body {
@@ -31,7 +24,7 @@ body {
   font-weight: 400;                               /* 字體粗细程度 */
   font-size: 1.6rem;
   line-height: 1.7;                               /* 1.7 times of predefined line height */
-  color: #777;                                    /* grey color */
+  color: $color-grey-dark;                        /* grey color */
   padding: 3rem;
 
   box-sizing: border-box;                         /* specify for a box */
@@ -41,14 +34,14 @@ body {
   height: 95vh;                                   /*  95% the viewport height (vh) of box */
   background-image: linear-gradient(              /* 從鮮綠色一直往右下漸變到深綠色 */
                   to right bottom,
-                  rgba(126,213,111,0.8),                      /* rgba: red, green, blue, opacity value (不透明度值) */
-                  rgba(40, 180, 131, 0.8)),
+                  rgba($color-primary-light, 0.8),     /* rgba: red, green, blue, opacity value (不透明度值) */
+                  rgba($color-primary-dark, 0.8)),
   url(../img/hero.jpg);                           /* .. refer to go into the project folder. */
   background-size: cover;                         /* fit element inside the box, and regardless viewport width */
   background-position: top;                       /* make sure stays at the top of the container */
   position: relative;
 
-  clip-path: polygon(0 0 , 100% 0, 100% 75vh, 0 100%);        /* polygon(x y, x y, x y) */
+  clip-path: polygon(0 0 , 100% 0, 100% 75vh, 0 100%);      /* polygon(x y, x y, x y) */
 }
 
 .header__logo-box {
@@ -58,7 +51,7 @@ body {
 }
 
 .header__logo {
-  height: 3.5rem;                                   /* width will automatically figured out by the browser. */
+  height: 3.5rem;                                           /* width will automatically figured out by the browser. */
 }
 
 
@@ -76,7 +69,7 @@ body {
 }
 
 .heading-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;                      /* 強制所有字符被轉換為大寫  */
 
   backface-visibility: hidden;                    /* Fix animation a bit shaky by [隱藏元素在3D 空間中旋轉時的背面] */
@@ -173,8 +166,8 @@ body {
 }
 
 .btn--white {
-  background-color: #fff;
-  color: #777;
+  background-color: $color-white;
+  color: $color-grey-dark;
 }
 
 /* run css after pseudo element finished*/
@@ -192,7 +185,7 @@ body {
 }
 
 .btn--white::after {
-  background-color: #fff;
+  background-color: $color-white;
 }
 
 .btn:hover::after {
