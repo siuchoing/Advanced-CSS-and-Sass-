@@ -41,29 +41,25 @@ body {
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* polygon(x y, x y, x y) */ }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem;
-  /* width will automatically figured out by the browser. */ }
-
-.header__logo-box:hover > .logo {
-  /* 當鼠標懸停在圖片上時全圖預覽的畫廊功能 */
-  animation: moveInRight 1s ease-out; }
-
-/* Move box to Center position */
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* firstly, 50% of element's height to the left, and to the top */
-  text-align: center;
-  /* 文字置中 */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem;
+    /* width will automatically figured out by the browser. */ }
+  .header__logo-box:hover > .logo {
+    /* 當鼠標懸停在圖片上時全圖預覽的畫廊功能 */
+    animation: moveInRight 1s ease-out; }
+  .header__text-box {
+    /* Move box to Center position */
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* firstly, 50% of element's height to the left, and to the top */
+    text-align: center;
+    /* 文字置中 */ }
 
 .heading-primary {
   color: #fff;
@@ -72,28 +68,26 @@ body {
   backface-visibility: hidden;
   /* Fix animation a bit shaky by [隱藏元素在3D 空間中旋轉時的背面] */
   margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  /* the animation will start slower and then accelerate over time. */
-  /*
-  animation-delay: 3s;                            !*after 3s, to start animation (optional)*!
-  animation-iteration-count: 3;                   !*run animation 3 time*!
-  */ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.74rem;
-  /* 左右字距 */
-  animation: moveInRight 1s ease-out; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* the animation will start slower and then accelerate over time. */
+    /*
+    animation-delay: 3s;                        !*after 3s, to start animation (optional)*!
+    animation-iteration-count: 3;               !*run animation 3 time*!
+    */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.74rem;
+    /* 左右字距 */
+    animation: moveInRight 1s ease-out; }
 
 @keyframes moveInLeft {
   0% {
@@ -138,68 +132,61 @@ body {
     transform: translateY(0);
     /* move to original */ } }
 
-/* pseudo-class */
-/* You can use .btn to replace this pseudo-class */
-.btn:link,
-.btn:visited {
-  /* visited state, is a state before click and stay the element  */
-  text-transform: uppercase;
-  /* 強制所有字符被轉換為大寫 */
-  text-decoration: none;
-  /* 移除底線 */
-  padding: 1.5rem 4rem;
-  /* 1.5rem for top bottom; 4rem for left right */
-  display: inline-block;
-  /* should be doing if provide padding or height or width of element */
-  border-radius: 10rem;
-  /* 圓角效果 */
-  transition: all .2s;
-  /* all the properties are enabled to be animated. */
-  position: relative;
-  font-size: 1.6rem; }
-
-.btn:hover {
-  transform: translateY(-0.3rem);
-  /* when move to the element, it will move up the element */
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-  /* x偏移量 | y偏移量(down 1rem) | 陰影模糊半徑 | 陰影顏色 */ }
-
-/* related to .btn:link */
-.btn:active {
-  transform: translateY(-0.1rem);
-  /* -.1rem is related to the initial state, it is to the link state */
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  /* !! smaller the shadow while button is closer !! */ }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
-
-/* run css after pseudo element finished*/
-.btn::after {
-  content: "";
-  /* insert content */
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  /* -1 是 最低層位置 */
-  transition: all .4s;
-  /* shorthand transition */ }
-
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
-
-.btn--animated {
-  animation: moveInBottom 0.5s ease-out .75;
-  /* [name, duration, timing function, delay] */
-  animation-fill-mode: backwards;
-  /* Apply the styles up to 0% before the animation starts. */ }
+.btn {
+  /* pseudo-class */
+  /* You can use .btn to replace this pseudo-class */
+  /* related to &:link */
+  /* run css after pseudo element finished*/ }
+  .btn:link, .btn:visited {
+    /* visited state, is a state before click and stay the element  */
+    text-transform: uppercase;
+    /* 強制所有字符被轉換為大寫 */
+    text-decoration: none;
+    /* 移除底線 */
+    padding: 1.5rem 4rem;
+    /* 1.5rem for top bottom; 4rem for left right */
+    display: inline-block;
+    /* should be doing if provide padding or height or width of element */
+    border-radius: 10rem;
+    /* 圓角效果 */
+    transition: all .2s;
+    /* all the properties are enabled to be animated. */
+    position: relative;
+    font-size: 1.6rem; }
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    /* when move to the element, it will move up the element */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    /* x偏移量 | y偏移量(down 1rem) | 陰影模糊半徑 | 陰影顏色 */ }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-0.1rem);
+    /* -.1rem is related to the initial state, it is to the link state */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    /* !! smaller the shadow while button is closer !! */ }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn::after {
+    content: "";
+    /* insert content */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* -1 是 最低層位置 */
+    transition: all .4s;
+    /* shorthand transition */ }
+  .btn--animated {
+    animation: moveInBottom 0.5s ease-out .75;
+    /* [name, duration, timing function, delay] */
+    animation-fill-mode: backwards;
+    /* Apply the styles up to 0% before the animation starts. */ }
