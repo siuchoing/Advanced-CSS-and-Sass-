@@ -1,5 +1,5 @@
 .header {
-  height: 95vh;                                 /*  95% the viewport height (vh) of box */
+  height: $header-height;                                 /*  95% the viewport height (vh) of box */
   background-image: linear-gradient(            /* 從鮮綠色一直往右下漸變到深綠色 */
                   to right bottom,
                   rgba($color-primary-light, 0.8),            /* rgba: red, green, blue, opacity value (不透明度值) */
@@ -9,7 +9,7 @@
   background-position: top;                     /* make sure stays at the top of the container */
   position: relative;
 
-  clip-path: polygon(0 0 , 100% 0, 100% 75vh, 0 100%);      /* polygon(x y, x y, x y) */
+  clip-path: polygon(0 0 , 100% 0, 100% $header-clip-path-height, 0 100%);      /* polygon(x y, x y, x y) */
 
   &__logo-box {
     position: absolute;

@@ -1,3 +1,4 @@
+// Discover our tours button
 .btn {
   /* pseudo-class */                            /* You can use .btn to replace this pseudo-class */
   &:link,                                       /* link state, is a state of a selector */
@@ -9,7 +10,7 @@
     border-radius: 10rem;                       /* 圓角效果 */
     transition: all .2s;                        /* all the properties are enabled to be animated. */
     position: relative;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
   }
 
   &:hover {
