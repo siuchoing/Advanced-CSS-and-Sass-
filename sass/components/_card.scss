@@ -1,5 +1,5 @@
 .card {
-  // parent element
+  // Functionality
   perspective: 150rem;                  // perspective must in parent, and work in firefox
   -moz-perspective: 150rem;
   position: relative;
@@ -36,10 +36,30 @@
 
   // child element
   &:hover &__side--front{
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
   }
 
   &:hover &__side--back{
     transform: rotateY(0);
   }
+
+  // Front Side Styling
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+      url("../img/nat-5.jpg");
+    }
+    &--2 {
+      background-image: url("../img/nat-5.jpg");
+    }
+    &--3 {
+      background-image: url("../img/nat-5.jpg");
+    }
+  }
+
+
 }
