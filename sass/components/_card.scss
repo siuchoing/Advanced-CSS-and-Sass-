@@ -1,0 +1,45 @@
+.card {
+  // parent element
+  perspective: 150rem;                  // perspective must in parent, and work in firefox
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem;                        // provide same height in parent, to prevent css collapse
+
+  &__side {
+    color: #fff;
+    font-size: 2rem;
+
+    height: 50rem;
+    transition: all .8s ease;           // ease will make this animation looks a bit smoother
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;        // hidden the back face
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      background-color: green;
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+      }
+    }
+
+  }
+
+  // child element
+  &:hover &__side--front{
+    transform: rotateY(180deg);
+  }
+
+  &:hover &__side--back{
+    transform: rotateY(0);
+  }
+}
