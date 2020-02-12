@@ -9,6 +9,7 @@
   background-position: top;                     /* make sure stays at the top of the container */
   position: relative;
 
+  -webkit-clip-path: polygon(0 0 , 100% 0, 100% $header-clip-path-height, 0 100%);    // using the webkit prefix to make clip-path work across all the browsers
   clip-path: polygon(0 0 , 100% 0, 100% $header-clip-path-height, 0 100%);      /* polygon(x y, x y, x y) */
 
   &__logo-box {

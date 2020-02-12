@@ -3,13 +3,10 @@
   perspective: 150rem;                  // perspective must in parent, and work in firefox
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem;                        // provide same height in parent, to prevent css collapse
+  height: 52rem;                        // provide same height in parent, to prevent css collapse
 
   &__side {
-    color: #fff;
-    font-size: 2rem;
-
-    height: 50rem;
+    height: 52rem;
     transition: all .8s ease;           // ease will make this animation looks a bit smoother
     position: absolute;
     top: 0;
@@ -17,6 +14,7 @@
     width: 100%;
     backface-visibility: hidden;        // hidden the back face
     border-radius: 3px;
+    over-flow: hidden;                  // 內容會被修剪，並且其餘內容不可見
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
     &--front {
@@ -43,11 +41,13 @@
     transform: rotateY(0);
   }
 
-  // Front Side Styling
+  // FRONT SIDE STYLING
   &__picture {
     background-size: cover;
     height: 23rem;
-    background-blend-mode: screen;
+    background-blend-mode: screen;                                // clip-path may fail due to background-blend-mode on IE
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);    // using the webkit prefix to make clip-path work across all the browsers
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
     &--1 {
       background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
@@ -61,5 +61,49 @@
     }
   }
 
+  &__heading {
+    font-size: 2.8rem;
+    font-width: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+  }
 
+  &__heading_span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;              // apply prefix for all browser
+    box-decoration-break: clone;                      // render each box fragment as specified box
+
+    &--1 {
+      background-image: linear-gradient(to right bottom,
+        rgba($color-secondary-light, .85),
+        rgba($color-secondary-dark, .85)
+      );
+    }
+  }
+
+  &__details {
+    padding: 3rem;
+
+    ul {
+      list-style: none;                               // Remove list bullets
+      width: 80%;
+      margin: 0 auto;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+
+      }
+    }
+  }
 }
