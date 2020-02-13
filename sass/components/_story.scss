@@ -7,6 +7,7 @@
   padding: 6rem;
   padding-left: 9rem;
   font-size: $default-font-size;
+  transform: skew(-12deg);                          // = skewX()
 
   &__shape {
     width: 15rem;
@@ -16,11 +17,34 @@
     shape-outside: circle(50% at 50% 50%);          // wrapping text around a circle, 50% of width and height (7.5rem)
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
-    transform: translateX(-3rem);                   // move circle to the left
+    transform: translateX(-3rem) skewX(12deg);                   // move circle to the left
   }
 
   &__img {
     height: 100%;                                    // to scale smaller the img as circle size
+  }
+
+  &__text {
+    transform: skewX(12deg);                          // = skewX()
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);                  // start position
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;                                       // hidden
+    transition: all .5s;
+    backface-visibility: hidden;                      /* Fix transition work outside the circle by [隱藏元素在3D 空間中旋轉時的背面] */
+  }
+
+  &:hover &__caption {
+    opacity: 1;                                       // show
+    transform: translate(-50%, -50%);                 // end position
   }
 
 }

@@ -392,7 +392,8 @@ body {
   border-radius: 3px;
   padding: 6rem;
   padding-left: 9rem;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  transform: skew(-12deg); }
   .story__shape {
     width: 15rem;
     height: 15rem;
@@ -401,9 +402,27 @@ body {
     shape-outside: circle(50% at 50% 50%);
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
-    transform: translateX(-3rem); }
+    transform: translateX(-3rem) skewX(12deg); }
   .story__img {
     height: 100%; }
+  .story__text {
+    transform: skewX(12deg); }
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden;
+    /* Fix transition work outside the circle by [隱藏元素在3D 空間中旋轉時的背面] */ }
+  .story:hover .story__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
 
 .row {
   max-width: 114rem;
