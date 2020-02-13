@@ -1,0 +1,17 @@
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;                              // in the bottom layer
+  opacity: .15;
+  overflow: hidden;                         // 如有必要，內容會被裁剪以適合填充框
+
+  &__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;                      // 保持長寬比例以填補整個格子，如果長寬比例無法一致，會切割高度的部份, 來調整。
+  }
+
+}
