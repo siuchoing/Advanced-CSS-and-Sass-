@@ -1,6 +1,7 @@
 // Discover our tours button
 .btn {
   /* pseudo-class */                            /* You can use .btn to replace this pseudo-class */
+  &,                                            /* link to btn class */
   &:link,                                       /* link state, is a state of a selector */
   &:visited {                                   /* visited state, is a state before click and stay the element  */
     text-transform: uppercase;                  /* 強制所有字符被轉換為大寫 */
