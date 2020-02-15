@@ -73,6 +73,10 @@
     display: inline-block;
   }
 
+  &__radio-input {
+    display: none;
+  }
+
   &__radio-label {
     font-size: $default-font-size;
     cursor: pointer;
@@ -89,9 +93,10 @@
     display: inline-block;
     position: absolute;
     left: 0;
-    top: 0;
+    top: -.4rem;
 
-    &::after {
+    // create radio core
+    &::after {                                        // run css after pseudo element finished
       content: "";
       display: block;
       height: 1.3rem;
@@ -100,8 +105,18 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50px, -50px);
+      transform: translate(-50%, -50%);
       background-color: $color-primary;
+      opacity: 0;                                     // hidden all radio core
+      transition: opacity .2s;
     }
+  }
+
+  /*****************************
+  * Sibling selector: select <label> first, then select this child <span> for radio core
+  * It is work for checkbox too
+   */
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;                                       // display one selected radio core
   }
 }
