@@ -15,6 +15,11 @@
     width: 90%;
     display: block;                                     // input tag in the row
 
+
+    &:required {                                        // __input:required
+      box-shadow:none;                                  // remove the red border in a required form input
+    }
+
     &:focus {                                           // trigger when the user clicks or taps on an element with keyboard's "tab" key
       outline: none;                                    // similar border, but build outside the contain box
       box-shadow: 0 1rem 2rem rgba($color-black, .1);
