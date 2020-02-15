@@ -70,6 +70,7 @@
 
 // learn-More button
 .btn-text {
+
   &:link,
   &:visited {
     font-size: $default-font-size;
@@ -80,12 +81,14 @@
     padding: 3px;
     transition: all.2s;
   }
+
   &:hover {
     background-color: $color-primary;
     color: $color-white;
     box-shadow: 0 1rem 2rem rgba($color-black, .15);  /* x偏移量 | y偏移量(down 1rem) | 陰影模糊半徑 | 陰影顏色 */
     transform: translateY(-2px);
   }
+
   &:active {
     box-shadow: 0 .5rem 1rem rgba($color-black, .15);
     transform: translateY(0);
