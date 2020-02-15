@@ -27,12 +27,6 @@
         </header>
         <main>
             <section class="section-about">
-                <div class="u-center-text u-margin-bottom-big">
-                    <h2 class="heading-secondary">
-                        Exciting tours for adventurous people
-                    </h2>
-                </div>
-
                 <div class="row">
                     <div class="col-1-of-2">
                         <h3 class="heading-tertiary u-margin-bottom-small">You're going to fall in love with nature</h3>
@@ -268,7 +262,35 @@
             <section class="section-book">
                 <div class="row">
                     <div class="book">
+                        <div class="book__form">
+                            <form action="#" class="form">
+                                <div class="u-margin-bottom-medium">
+                                    <h2 class="heading-secondary">
+                                        Start booking now
+                                    </h2>
+                                </div>
 
+                                <!-- Adjacent Sibling--1 between input and label -->
+                                <div class="form__group">
+                                    <input type="text" class="form__input" placeholder="Full name" id="name" required>
+                                    <label for="name" class="form__label">Full name</label>
+                                </div>
+
+                                <!-- Adjacent Sibling--1 between input and label -->
+                                <div class="form__group" style="display: block;">
+                                    <input type="email" class="form__input" placeholder="Email address" id="email" required>
+                                    <label for="email" class="form__label">Email address</label>
+                                </div>
+
+                                <!-- General Adjacent Sibling--2 between input and label-->
+                                <div class="form__group" style="display: none;">
+                                    <input type="number" min="0" class="form__input" placeholder="Age" id="age" required>
+                                    <div></div>
+                                    <label for="age" class="form__label--2">Age</label>
+                                </div>
+
+                            </form>
+                        </div>
                     </div>
                 </div>
             </section>
