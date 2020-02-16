@@ -1,0 +1,39 @@
+.navigation {
+  &__checkbox {
+
+  }
+
+  &__button {
+
+  }
+
+  // Create the navigation circle (green)
+  &__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    background-image: radial-gradient($color-primary-light, $color-primary-dark); // 環狀漸變
+    z-index: 1000;                                       // set in the second upper layer
+  }
+
+  &__nav {
+
+  }
+
+  &__list {
+
+  }
+
+  &__item {
+
+  }
+
+  &__link {
+
+  }
+
+
+}
