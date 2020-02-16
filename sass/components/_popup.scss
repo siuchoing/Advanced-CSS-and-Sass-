@@ -10,31 +10,6 @@
   visibility: hidden;
   transition: all .3s;
 
-  //when we click on a button, or when the URL changes to having target in it.
-  &:target {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  &__close {
-    &:link,
-    &:visited {
-      color: $color-grey-dark;
-      position: absolute;
-      top: 2.5rem;
-      right: 2.5rem;
-      font-size: 3rem;
-      text-decoration: none;
-      display: inline-block;
-      transition: all .2s;
-      line-height: 1;                                 // 1 * element font-size to move 'x' up 3rem
-    }
-
-    &:hover {
-      color: $color-primary;
-    }
-  }
-
   &__content {
     @include absCenter;
 
@@ -85,5 +60,32 @@
     -ms-hyphens: auto;
     hyphens: auto;
   }
+
+
+  //when we click on a button, or when the URL changes to having target in it.
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all .2s;
+      line-height: 1;                                 // 1 * element font-size to move 'x' up 3rem
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
 }
 
