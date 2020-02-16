@@ -14,6 +14,10 @@
     border-radius: 50%;
     z-index: 2000;                                       // set in the 1st upper layer
     box-shadow: 0 1rem 3rem rgba($color-black, .1);
+
+    // For icon
+    text-align: center;
+    cursor: pointer;
   }
 
   // Create the navigation circle (green) behind the &__button circle (white)
@@ -95,6 +99,7 @@
     }
   }
 
+  // FUNCTIONALITY
   // when check the nav, it will scale up
   &__checkbox:checked ~ &__background {
     transform: scale(80);                               // to scale circle the backgound up to full screen
@@ -104,5 +109,40 @@
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     width: 100%;
+  }
+
+  // ICON
+  &__icon {
+    position: relative;
+    margin-top: 3.5rem;
+
+    &,                                                  // create one line for icon
+    &::before,                                          // create one line for icon::before
+    &::after {                                          // create one line for icon::after
+      width: 3rem;
+      height: 2px;
+      background-color: $color-grey-dark-3;
+      display: inline-block;
+      content: "";
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all .2s;
+    }
+
+    &::before { top: -.8rem; }
+    &::after { top: .8rem; }
+  }
+
+  &__button:hover &__icon::before {
+    top: -1rem;
+  }
+
+  &__button:hover &__icon::after {
+    top: 1rem;
   }
 }
