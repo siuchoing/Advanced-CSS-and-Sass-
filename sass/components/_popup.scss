@@ -14,13 +14,16 @@
     @include absCenter;
 
     width: 75%;
-    height: 50rem;
     background-color: $color-white;
     box-shadow: 0 2rem 4rem rgba($color-black, .2);
     border-radius: .3rem;
 
     display: table;                                         // apply table to make child element have same height
     overflow: hidden;
+
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.25);             // add translate(-50%, -50%) to fix conflict from absCenter
+    transition: all .5s .2s;                                // add .2s for delay
   }
 
   &__left {
@@ -45,27 +48,36 @@
     margin-bottom: 4rem;
 
     -moz-column-count: 2;
-    -moz-column-gap: 4rem;                                       // 1em = 14px;
+    -moz-column-gap: 4rem; // 1em = 14px;
     -moz-column-rule: 1px solid $color-grey-light-2;
 
 
     column-count: 2;
-    column-gap: 4rem;                                       // 1em = 14px;
+    column-gap: 4rem; // 1em = 14px;
     column-rule: 1px solid $color-grey-light-2;
 
     // It only works on Firefox, not support by Chrome
 
-    -webkit-hyphens: auto;                                  // e.g. I will go to lib-
-    -moz-hyphens: auto;                                     //      rary today. Wher-
+    -webkit-hyphens: auto; // e.g. I will go to lib-
+    -moz-hyphens: auto; //      rary today. Wher-
     -ms-hyphens: auto;
     hyphens: auto;
   }
 
 
-  //when we click on a button, or when the URL changes to having target in it.
+  /*************
+  * Open states
+   */
+  // when we click on a button, or when the URL changes to having target in it.
   &:target {
     opacity: 1;
     visibility: visible;
+  }
+
+  // when url is target to popup
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
   }
 
   &__close {
@@ -79,13 +91,13 @@
       text-decoration: none;
       display: inline-block;
       transition: all .2s;
-      line-height: 1;                                 // 1 * element font-size to move 'x' up 3rem
+      line-height: 1; // 1 * element font-size to move 'x' up 3rem
     }
 
     &:hover {
       color: $color-primary;
     }
   }
-
 }
+
 
