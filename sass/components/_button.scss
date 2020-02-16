@@ -12,6 +12,10 @@
     transition: all .2s;                        /* all the properties are enabled to be animated. */
     position: relative;
     font-size: $default-font-size;
+
+    // Change for the <button> element
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
@@ -25,7 +29,9 @@
   }
 
   /* related to &:link */
-  &:active {
+  &:active,                                         // when click the button
+  &:focus {                                         // to make sure when click "next step" button, it will keep focus on that button
+    outline: none;                                  // similar border, but build outside the contain box
     transform: translateY(-.1rem);                  /* -.1rem is related to the initial state, it is to the link state */
     box-shadow: 0 .5rem 1rem rgba($color-black,.2); /* !! smaller the shadow while button is closer !! */
   }

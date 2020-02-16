@@ -143,22 +143,22 @@ body {
   /* specify for a box */ }
 
 .u-center-text {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem !important; }
 
 .u-margin-bottom-medium {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem !important; }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .u-margin-top-big {
-  margin-top: 8rem; }
+  margin-top: 8rem !important; }
 
 .u-margin-top-huge {
-  margin-top: 10rem; }
+  margin-top: 10rem !important; }
 
 .bg-video {
   position: absolute;
@@ -179,7 +179,7 @@ body {
   /* You can use .btn to replace this pseudo-class */
   /* related to &:link */
   /* run css after pseudo element finished*/ }
-  .btn:link, .btn:visited {
+  .btn, .btn:link, .btn:visited {
     /* visited state, is a state before click and stay the element  */
     text-transform: uppercase;
     /* 強制所有字符被轉換為大寫 */
@@ -194,7 +194,9 @@ body {
     transition: all .2s;
     /* all the properties are enabled to be animated. */
     position: relative;
-    font-size: 1.6rem; }
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer; }
   .btn:hover {
     transform: translateY(-0.3rem);
     /* when move to the element, it will move up the element */
@@ -203,7 +205,8 @@ body {
     .btn:hover::after {
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0; }
-  .btn:active {
+  .btn:active, .btn:focus {
+    outline: none;
     transform: translateY(-0.1rem);
     /* -.1rem is related to the initial state, it is to the link state */
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
@@ -414,7 +417,11 @@ body {
     opacity: 0;
     visibility: hidden;
   }
-*/ }
+*/
+  /*****************************
+  * Sibling selector: select <label> first, then select this child <span> for radio core
+  * It is work for checkbox too
+   */ }
   .form__group:not(:last-child) {
     margin-bottom: 2rem; }
   .form__input {
@@ -428,6 +435,8 @@ body {
     border-bottom: 3px solid transparent;
     width: 90%;
     display: block; }
+    .form__input:required {
+      box-shadow: none; }
     .form__input:focus {
       outline: none;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
@@ -447,6 +456,40 @@ body {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4rem); }
+  .form__radio-group {
+    width: 40%;
+    display: inline-block; }
+  .form__radio-input {
+    display: none; }
+  .form__radio-label {
+    font-size: 1.6rem;
+    cursor: pointer;
+    position: relative;
+    padding-left: 5rem; }
+  .form__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid #55c57a;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -.4rem; }
+    .form__radio-button::after {
+      content: "";
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #55c57a;
+      opacity: 0;
+      transition: opacity .2s; }
+  .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+    opacity: 1; }
 
 .story {
   width: 75%;
@@ -584,7 +627,7 @@ body {
   background-size: 100%;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  height: 50rem; }
+  height: 56rem; }
   .book__form {
     width: 50%;
     padding: 6rem; }
