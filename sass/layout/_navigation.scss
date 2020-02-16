@@ -116,9 +116,9 @@
     position: relative;
     margin-top: 3.5rem;
 
-    &,                                                  // create one line for icon
-    &::before,                                          // create one line for icon::before
-    &::after {                                          // create one line for icon::after
+    &,                                                  // create middle line for icon
+    &::before,                                          // create top line for icon::before
+    &::after {                                          // create bottom line for icon::after
       width: 3rem;
       height: 2px;
       background-color: $color-grey-dark-3;
@@ -144,5 +144,20 @@
 
   &__button:hover &__icon::after {
     top: 1rem;
+  }
+
+  // when checkbox is selected, the icon will have style in the middle line
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
   }
 }
