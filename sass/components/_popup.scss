@@ -6,8 +6,15 @@
   top: 0;
   left: 0;
   z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
 
-  display: none;
+  //when we click on a button, or when the URL changes to having target in it.
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
 
   &__content {
     @include absCenter;
