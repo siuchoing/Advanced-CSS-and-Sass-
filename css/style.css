@@ -6,15 +6,13 @@
 1200 - 1800px;	      Desktop
 1800 - ∞;	          Big Desktop               min-width
 
-@mixin respond-phone {
-  @media (max-width: 600px) { @content }
-}
-
  $breakpoint argument choices:
  - phone
  - tab-port
  - tab-land
  - big-desktop
+
+ORDER: Base + typography + general layout + grid + page layout + components
 
  1em = 16px
 */
