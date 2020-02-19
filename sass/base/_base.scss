@@ -15,20 +15,25 @@ html {                                          /* For Mobile, and Web */
   //  font-size: 50%;
   //}
 
-  @include respond(phone) {
-    font-size: 50%;
+  @include respond(tab-land) {                   // width < 1200
+    font-size: 56.25%;                           // 1rem = 9px, 9/16 = 56.25%
   }
 
-  @include respond(tab-port) {
-    font-size: 60%;
+  @include respond(tab-port) {                   // width < 900
+    font-size: 50%;                              // 1rem = 8px, 8/16 = 50%
   }
 
-  @include respond(tab-land) {
-    font-size: 70%;
-  }
+  //@include respond(phone) {                    // width < 600
+  //  font-size: 50%;                            // tab-port is less than 900px, so it apply phone for 50% font-size too
+  //}
+
+  //
+  //@include respond(phone) {                    // width < 600
+  //  font-size: 30%;                            // 1rem = 4.8px
+  //}
 
   @include respond(big-desktop) {
-    font-size: 80%;
+    font-size: 75%;                              // 1rem = 12px, 12/16 = 75%
   }
 }
 
