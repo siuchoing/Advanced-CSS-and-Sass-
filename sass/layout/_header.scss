@@ -12,6 +12,11 @@
   -webkit-clip-path: polygon(0 0 , 100% 0, 100% $header-clip-path-height, 0 100%);    // using the webkit prefix to make clip-path work across all the browsers
   clip-path: polygon(0 0 , 100% 0, 100% $header-clip-path-height, 0 100%);      /* polygon(x y, x y, x y) */
 
+  @include respond(phone) {
+    -webkit-clip-path: polygon(0 0 , 100% 0, 100% 85vh, 0 100%);    // using the webkit prefix to make clip-path work across all the browsers
+    clip-path: polygon(0 0 , 100% 0, 100% 85vh, 0 100%);      /* polygon(x y, x y, x y) */
+  }
+
   &__logo-box {
     position: absolute;
     top: 4rem;
