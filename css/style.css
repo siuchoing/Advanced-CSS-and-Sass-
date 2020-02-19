@@ -5,13 +5,18 @@
 900 - 1200px;	      Tablet Landscape          max-width
 1200 - 1800px;	      Desktop
 1800 - ∞;	          Big Desktop               min-width
-*/
-/*
-$breakpoint argument choices:
+
+@mixin respond-phone {
+  @media (max-width: 600px) { @content }
+}
+
+ $breakpoint argument choices:
  - phone
  - tab-port
  - tab-land
  - big-desktop
+
+ 1em = 16px
 */
 @keyframes moveInLeft {
   0% {
@@ -69,16 +74,16 @@ html {
   /* For Mobile, and Web */
   font-size: 62.5%;
   /* set parent font size as 1rem = 10px, 100%/16px*10px = 62.5% */ }
-  @media (max-width: 600px) {
+  @media (max-width: 37.5em) {
     html {
       font-size: 50%; } }
-  @media (max-width: 900px) {
+  @media (max-width: 56.25em) {
     html {
       font-size: 60%; } }
-  @media (max-width: 1200px) {
+  @media (max-width: 75em) {
     html {
-      font-size: 70%; } }
-  @media (min-width: 1800px) {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
     html {
       font-size: 80%; } }
 
@@ -163,16 +168,16 @@ html {
   /* For Mobile, and Web */
   font-size: 62.5%;
   /* set parent font size as 1rem = 10px, 100%/16px*10px = 62.5% */ }
-  @media (max-width: 600px) {
+  @media (max-width: 37.5em) {
     html {
       font-size: 50%; } }
-  @media (max-width: 900px) {
+  @media (max-width: 56.25em) {
     html {
       font-size: 60%; } }
-  @media (max-width: 1200px) {
+  @media (max-width: 75em) {
     html {
-      font-size: 70%; } }
-  @media (min-width: 1800px) {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
     html {
       font-size: 80%; } }
 
