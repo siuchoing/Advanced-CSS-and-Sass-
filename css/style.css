@@ -121,6 +121,10 @@ body {
     animation-delay: 3s;                        !*after 3s, to start animation (optional)*!
     animation-iteration-count: 3;               !*run animation 3 time*!
     */ }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1rem;
+        font-family: 5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -128,6 +132,10 @@ body {
     letter-spacing: 1.74rem;
     /* 左右字距 */
     animation: moveInRight 1s ease-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: 1rem;
+        font-size: .5rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
