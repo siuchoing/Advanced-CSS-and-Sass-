@@ -84,7 +84,11 @@ html {
 
 body {
   box-sizing: border-box;
-  /* specify for a box */ }
+  /* specify for a box */
+  padding: 3rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 body {
   font-family: "Lato", sans-serif;
@@ -95,8 +99,7 @@ body {
   line-height: 1.7;
   /* 1.7 times of predefined line height */
   color: #777;
-  /* grey color */
-  padding: 3rem; }
+  /* grey color */ }
 
 .heading-primary {
   color: #fff;
@@ -175,7 +178,11 @@ html {
 
 body {
   box-sizing: border-box;
-  /* specify for a box */ }
+  /* specify for a box */
+  padding: 3rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 .u-center-text {
   text-align: center !important; }

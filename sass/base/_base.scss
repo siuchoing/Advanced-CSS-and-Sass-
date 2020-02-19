@@ -39,4 +39,9 @@ html {                                          /* For Mobile, and Web */
 
 body {
   box-sizing: border-box;                       /* specify for a box */
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
