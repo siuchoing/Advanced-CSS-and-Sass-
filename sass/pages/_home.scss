@@ -61,16 +61,18 @@
                                     rgba($color-white, .9) 50%,
                                     transparent 50%),
                                     url("../img/nat-10.jpg");
-  background-size: 100%;                                      // = background-size: cover;
+  background-size: 100%;                                      // occupying the entire width
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
   @include respond(tab-land) {
     background-image: linear-gradient(105deg,
             rgba($color-white, .9) 0%,
-            rgba($color-white, .9) 70%,
-            transparent 70%),
+            rgba($color-white, .9) 65%,
+            transparent 65%),
     url("../img/nat-10.jpg");
+
+    background-size: cover;                                      // occupying the entire height
   }
 
   &__form {
@@ -78,7 +80,7 @@
     padding: 6rem;
 
     @include respond(tab-land) {
-      width: 70%;
+      width: 65%;
     }
   }
 }
