@@ -349,9 +349,24 @@
             </section>
         </main>
 
+
         <footer class="footer">
             <div class="footer__logo-box">
-                <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo">
+
+                <!-- Art direction: Different images for different viewport width -->
+
+                <!-- Using the picture element to specify multiple sources for one image based on the media query -->
+                <picture class="footer__logo">
+                    <!-- Different options (source, img) that give browser for images to display. -->
+
+                    <!-- Using at least one source and then followed by an image, which is basically the fallback. -->
+                    <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x"
+                            media="(max-width: 37.5em)">        <!-- max-width: 600px -->
+
+                    <!-- Using density switching to let browser choose the best option between 1x and 2x -->
+                    <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" src="img/logo-green-2x.png">
+                </picture>
+
             </div>
             <!-- .row>col-1-of-2*2 -->
             <div class="row">
