@@ -552,6 +552,10 @@ body {
     border-bottom: 3px solid transparent;
     width: 90%;
     display: block; }
+    @media (max-width: 56.25em) {
+      .form__input {
+        width: 100%;
+        margin-bottom: 2rem; } }
     .form__input:required {
       box-shadow: none; }
     .form__input:focus {
@@ -576,6 +580,10 @@ body {
   .form__radio-group {
     width: 40%;
     display: inline-block; }
+    @media (max-width: 56.25em) {
+      .form__radio-group {
+        width: 100%;
+        margin-bottom: 2rem; } }
   .form__radio-input {
     display: none; }
   .form__radio-label {
