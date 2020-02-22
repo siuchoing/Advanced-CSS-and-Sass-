@@ -81,7 +81,13 @@
 
     // fix not too wield
     text-align: center;
-    width: 100%
+    width: 100%;
+
+    visibility: hidden;
+  }
+
+  &__checkbox:checked ~ &__nav &__list {
+    visibility: visible;
   }
 
   &__item {
