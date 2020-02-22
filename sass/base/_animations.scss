@@ -38,3 +38,14 @@
     transform: translateY(0);                   /* move to original */
   }
 }
+
+@keyframes fixNavAnim {
+  0% {
+    top: -500rem;
+    left: -500rem;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
