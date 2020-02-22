@@ -778,6 +778,20 @@ body {
   .popup__close:hover {
     color: #55c57a; }
 
+.copyright__small {
+  font-size: 1.2rem;
+  color: #eee;
+  text-align: center;
+  padding: 2.5rem;
+  background-color: #777; }
+  @media only screen and (max-width: 125em) {
+    .copyright__small {
+      display: none; } }
+  @media only screen and (max-width: 56.25em) {
+    .copyright__small {
+      display: flex;
+      justify-content: center; } }
+
 .navigation__checkbox {
   display: none; }
 
@@ -1002,7 +1016,7 @@ body {
   color: #f7f7f7; }
   @media only screen and (max-width: 56.25em) {
     .footer {
-      padding: 8rem 0; } }
+      padding: 8rem 0 0 0; } }
   .footer__logo-box {
     text-align: center;
     margin-bottom: 8rem; }
@@ -1044,8 +1058,7 @@ body {
     float: right; }
     @media only screen and (max-width: 56.25em) {
       .footer__copyright {
-        width: 100%;
-        float: none; } }
+        display: none; } }
 
 .section-about {
   background-color: #f7f7f7;

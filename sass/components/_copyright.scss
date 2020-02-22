@@ -1,0 +1,19 @@
+// LEGAL TEXT - SMALLER SCREENS
+.copyright__small {
+  font-size: 1.2rem;
+  color: $color-grey-light-2;
+  text-align: center;
+  padding: 2.5rem;
+  background-color: $color-grey-dark;
+
+  // this is what happens below 2000px
+  @media only screen and (max-width: $bp-bigscreen) {
+    display: none;
+  }
+
+  // this is what happens below 900px
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    justify-content: center;
+  }
+}

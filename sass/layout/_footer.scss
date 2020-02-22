@@ -5,7 +5,7 @@
   color: $color-grey-light-1;
 
   @include respond(tab-port) {
-    padding: 8rem 0;
+    padding: 8rem 0 0 0;
   }
 
   &__logo-box {
@@ -71,8 +71,9 @@
     float: right;
 
     @include respond(tab-port) {
-      width: 100%;
-      float: none;
+      //width: 0;
+      //float: none;
+      display: none;
     }
   }
 

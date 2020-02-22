@@ -32,3 +32,12 @@ $gutter-horizontal: 6rem;
 // HEADER
 $header-height: 95vh;
 $header-clip-path-height: 75vh;
+
+// BREAK-POINT VARIABLES
+
+$bp-bigscreen:  125em; // 2000px. 2000/16 = 125, so 125em
+$bp-largest:     75em; // 1200px. 1200/16 = 75, so 75em
+$bp-large:    68.75em; // 1100px. 1100/16 = 68.75, so 68.75em
+$bp-medium:   56.25em; //  900px.  900/16 = 56.25, so 56.25em
+$bp-small:    37.55em; //  600px.  600/16 = 37.5, so 37.5em
+$bp-smallest: 31.25em; //  500px.  600/16 = 31.25, so 31.25em
