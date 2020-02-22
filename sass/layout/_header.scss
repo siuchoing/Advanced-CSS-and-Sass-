@@ -1,16 +1,28 @@
 .header {
+  // LOW RESOLUTION
   height: $header-height;                                 /*  95% the viewport height (vh) of box */
   background-image: linear-gradient(            /* 從鮮綠色一直往右下漸變到深綠色 */
                   to right bottom,
                   rgba($color-primary-light, 0.8),            /* rgba: red, green, blue, opacity value (不透明度值) */
                   rgba($color-primary-dark, 0.8)),
-  url(../img/hero.jpg);                         /* .. refer to go into the project folder. */
+  url(../img/hero-small.jpg);                         /* .. refer to go into the project folder. */
   background-size: cover;                       /* fit element inside the box, and regardless viewport width */
   background-position: top;                     /* make sure stays at the top of the container */
   position: relative;
 
   -webkit-clip-path: polygon(0 0 , 100% 0, 100% $header-clip-path-height, 0 100%);    // using the webkit prefix to make clip-path work across all the browsers
   clip-path: polygon(0 0 , 100% 0, 100% $header-clip-path-height, 0 100%);      /* polygon(x y, x y, x y) */
+
+  // HIGH RESOLUTION for 2x screen with vw >= 600px, OR LOW RESOLUTION for 1x with vw >= 2000px
+  // @media (condition1), (condition2) { ... } means Either condition1, or condition2 happens
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),            // 600px/16 = 37.5em
+         (min-width: 125em) {                    // dots per inch (the resolution of the Apple retina screen), 2000px/16 = 125em
+    background-image: linear-gradient(            /* 從黃色一直往右下漸變到橙色 */
+                    to right bottom,
+                    rgba($color-secondary-light, 0.8),
+                    rgba($color-secondary-dark, 0.8)),
+    url(../img/hero.jpg);                         /* .. refer to go into the project folder. */
+  }
 
   @include respond(phone) {
     -webkit-clip-path: polygon(0 0 , 100% 0, 100% 85vh, 0 100%);    // using the webkit prefix to make clip-path work across all the browsers
