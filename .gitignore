@@ -1,3 +1,7 @@
 node_modules/
 .idea/
-css/
+css/*
+
+# exept this
+!css/fonts/
+!css/icon-font.css
