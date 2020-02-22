@@ -10,6 +10,14 @@
   visibility: hidden;
   transition: all .3s;
 
+  @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    //-webkit-backdrop-filter: invert();
+    //-webkit-backdrop-filter: sepia(100%);
+    -webkit-backdrop-filter: blur(10px);            // work for Safari
+    backdrop-filter: blur(10px);                    // work for Chrome
+    background-color: rgba($color-black, .3);
+  }
+
   &__content {
     @include absCenter;
 
