@@ -163,10 +163,13 @@
   }
 
 
+  //@media only screen and (hover: hover) {...} means apply for Desktop
+  //@media only screen and (hover: none) {...} means apply for Mobile screen with touch-screen
 
-
-
-  @include respond(tab-port) {
+  //@include respond(tab-port) {
+  @media only screen and (max-width: 56.25em),
+         only screen and (hover: none)
+  {
     height: auto;                         // to override 52rem
     border-radius: 3px;
     background-color: $color-white;
