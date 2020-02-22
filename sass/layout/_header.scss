@@ -18,10 +18,10 @@
 
 
   // HIGH RESOLUTION for 2x screen with vw >= 600px, OR LOW RESOLUTION for 1x with vw >= 2000px
-  // @media (condition1), (condition2) { ... } means Either condition1, or condition2 happens
-  @media (min-resolution: 192dpi) and (min-width: 37.5em),            // 600px/16 = 37.5em
-         (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), // work for Safari
-         (min-width: 125em) {                    // dots per inch (the resolution of the Apple retina screen), 2000px/16 = 125em
+  // @media only screen and (condition1), (condition2) { ... } means Either condition1, or condition2 happens
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),            // 600px/16 = 37.5em
+         only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), // work for Safari
+         only screen and (min-width: 125em) {                    // dots per inch (the resolution of the Apple retina screen), 2000px/16 = 125em
     //background-image: linear-gradient(            /* 從黃色一直往右下漸變到橙色 */
     //                to right bottom,
     //                rgba($color-secondary-light, 0.8),
