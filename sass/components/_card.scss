@@ -12,6 +12,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden;// hidden the back face
     backface-visibility: hidden;        // hidden the back face
     border-radius: 3px;
     over-flow: hidden;                  // 內容會被修剪，並且其餘內容不可見

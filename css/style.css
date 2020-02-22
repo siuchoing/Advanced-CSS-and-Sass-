@@ -105,6 +105,7 @@ body {
   color: #fff;
   text-transform: uppercase;
   /* 強制所有字符被轉換為大寫  */
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   /* Fix animation a bit shaky by [隱藏元素在3D 空間中旋轉時的背面] */
   margin-bottom: 6rem; }
@@ -335,6 +336,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     over-flow: hidden;
@@ -649,6 +651,7 @@ body {
   .story__img {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
   .story__text {
     transform: skewX(12deg); }
@@ -666,6 +669,7 @@ body {
     text-align: center;
     opacity: 0;
     transition: all .5s;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     /* Fix transition work outside the circle by [隱藏元素在3D 空間中旋轉時的背面] */ }
   .story:hover .story__caption {

@@ -11,6 +11,7 @@ body {
   color: $color-white;
   text-transform: uppercase;                    /* 強制所有字符被轉換為大寫  */
 
+  -webkit-backface-visibility: hidden;// hidden the back face
   backface-visibility: hidden;                  /* Fix animation a bit shaky by [隱藏元素在3D 空間中旋轉時的背面] */
   margin-bottom: 6rem;
 

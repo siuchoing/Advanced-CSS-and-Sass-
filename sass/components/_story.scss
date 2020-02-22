@@ -37,6 +37,7 @@
   &__img {
     height: 100%;                                    // to scale smaller the img as circle size
     transform: translateX(-4rem) scale(1.4);
+    -webkit-backface-visibility: hidden;// hidden the back face
     backface-visibility: hidden;
   }
 
@@ -59,6 +60,7 @@
     text-align: center;
     opacity: 0;                                       // hidden
     transition: all .5s;
+    -webkit-backface-visibility: hidden;// hidden the back face
     backface-visibility: hidden;                      /* Fix transition work outside the circle by [隱藏元素在3D 空間中旋轉時的背面] */
   }
 
