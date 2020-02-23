@@ -26,6 +26,9 @@
     "type": "git",
     "url": "git+https://github.com/siuchoing/Advanced_CSS_and_Sass-Natours.git"
   },
+  "//GitReference": {
+    "//url": "https://github.com/Arronk/Natours-sass"
+  },
   "author": " ",
   "license": "ISC",
   "bugs": {
